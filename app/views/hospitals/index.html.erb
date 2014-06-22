@@ -1,0 +1,43 @@
+<h1>Listing hospitals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Encrypted password</th>
+      <th>Reset password token</th>
+      <th>Reset password sent at</th>
+      <th>Remember created at</th>
+      <th>Sign in count</th>
+      <th>Current sign in at</th>
+      <th>Last sign in at</th>
+      <th>Current sign in ip</th>
+      <th>Last sign in ip</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hospitals.each do |hospital| %>
+      <tr>
+        <td><%= hospital.encrypted_password %></td>
+        <td><%= hospital.reset_password_token %></td>
+        <td><%= hospital.reset_password_sent_at %></td>
+        <td><%= hospital.remember_created_at %></td>
+        <td><%= hospital.sign_in_count %></td>
+        <td><%= hospital.current_sign_in_at %></td>
+        <td><%= hospital.last_sign_in_at %></td>
+        <td><%= hospital.current_sign_in_ip %></td>
+        <td><%= hospital.last_sign_in_ip %></td>
+        <td><%= link_to 'Show', hospital %></td>
+        <td><%= link_to 'Edit', edit_hospital_path(hospital) %></td>
+        <td><%= link_to 'Destroy', hospital, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hospital', new_hospital_path %>

@@ -1,4 +1,6 @@
 Leaf::Application.routes.draw do
+  resources :listings
+
   resources :hospitals
 
   devise_for :admin_users, ActiveAdmin::Devise.config

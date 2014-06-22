@@ -1,5 +1,11 @@
 Leaf::Application.routes.draw do
-  resources :listings
+  resources :listings do
+  #->Prelang (voting/acts_as_votable)
+  member do
+    get "vote"
+  end
+end
+
 
   resources :hospitals
 

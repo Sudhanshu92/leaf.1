@@ -1,4 +1,5 @@
 ActiveAdmin.register Listing do
+  permit_params :title, :link, :description
 
   
   # See permitted parameters documentation:
